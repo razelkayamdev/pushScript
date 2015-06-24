@@ -5,8 +5,8 @@
 var apn = require('apn'); // https://github.com/argon/node-apn // npm install apn
 
 var options = {'production' : false,
-                'cert' : __dirname + 'cert.pem',
-                'key' : __dirname + 'key.pem'
+                'cert' : 'cert.pem',
+                'key' : 'key.pem'
 };
 
 var service = new apn.Connection(options);
