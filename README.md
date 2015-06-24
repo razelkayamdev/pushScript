@@ -9,3 +9,7 @@ Push Script
 * install `apn`
 
         npm install apn
+
+* usage
+
+        node sendPush.js
