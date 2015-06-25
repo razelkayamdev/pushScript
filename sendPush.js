@@ -1,12 +1,12 @@
-// When called outsid of containing folder, an error is generated.
-// https://github.com/argon/node-apn/issues/123
+//
+//  Created by Raz Elkayam on 06/22/15.
+//
 
-
-var apn = require('apn'); // https://github.com/argon/node-apn // npm install apn
+var apn = require(__dirname + '/node_modules/' + 'apn'); // https://github.com/argon/node-apn // npm install apn
 
 var options = {'production' : false,
-                'cert' : 'cert.pem',
-                'key' : 'key.pem'
+                'cert' : __dirname + '/cert.pem',
+                'key' : __dirname  + '/key.pem'
 };
 
 var service = new apn.Connection(options);
@@ -43,6 +43,6 @@ var device = new apn.Device('aedab4c0d434fe8e4d5add74d05439b28f047dd1b249b03efe3
 var note = new apn.Notification();
 note.badge = 1;
 note.sound = "default";
-note.alert = {'title' : 'aaa', 'body' : 'bbb'}; // can also be a string, i.e. note.alert = 'some text on the push';
+note.alert = {'title' : 'Shoping List' , 'body' : 'you need to buy some milk!'}; // can also be a string, i.e. note.alert = 'some text on the push';
 
-service.pushNotification(note, device);;
+service.pushNotification(note, device);
